@@ -1,0 +1,25 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+Here is Main Page.
+{% for post in posts %}
+  <div>
+    {{ post.author.id }}
+    {{ post.author.username }}
+    {{ post.author.profile_photo }}
+    {{ post.id }}
+    {{ post.image }}
+    {{ post.caption }}
+
+    {% for comment in posts.comment_post %}
+    <br> {{ comment.contents }}
+    {% endfor %}
+    <div>
+      ---------------------------------
+    </div>
+  </div>
+{% endfor %}
+
+
+{% endblock content %}
